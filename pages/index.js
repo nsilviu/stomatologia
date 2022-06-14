@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 export default function Home() {
   return (
     <>
-      <div className="m-5 z-0">
+      <div className="m-5">
         <Hero />
       </div>
     </>

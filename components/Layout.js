@@ -1,12 +1,19 @@
 import Navbar from "./Navbar";
+import Head from "next/head";
 
 const Layout = ({ children }) => {
   return (
     <>
+      <Head>
+        <title>Stomatologia Orto Implant</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div>
-        <Navbar />
+        <Navbar className="relative" />
       </div>
-      <>{children}</>
+      <>
+        <div className="relative z-0">{children}</div>
+      </>
     </>
   );
 };

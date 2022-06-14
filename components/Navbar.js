@@ -18,9 +18,14 @@ const Navbar = () => {
     visible: { opacity: 1 },
   };
 
+  const mobileMenu = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: "100%" },
+  };
+
   return (
     <nav>
-      <div className="flex justify-between mt-4">
+      <div className="flex justify-between mt-4 ">
         <div className="ml-5">
           <div className="flex flex-col cursor-pointer">
             <Link href="/">
@@ -36,35 +41,34 @@ const Navbar = () => {
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className=" flex self-center mr-4 p-2 rounded-md shadow-sm hover:bg-slate-100 cursor-pointer hover:shadow-md"
+          className="flex self-center mr-4 p-2 rounded-md shadow-sm hover:bg-slate-100 cursor-pointer hover:shadow-md"
           onClick={toggleMobileMenu}
         >
           <motion.button initial="hidden" animate="visible" variants={variants}>
             {!isMobileMenuVisible ? <MenuIcon /> : <CloseIcon />}
           </motion.button>
         </motion.div>
+        <motion.div
+          animate={isMobileMenuVisible ? "open" : "closed"}
+          variants={mobileMenu}
+          className="fixed z-50 flex flex-col mt-24 w-full justify-end font-semibold align-middle rounded-lg bg-slate-200"
+        >
+          <div className="flex flex-col p-3">
+            <div className="p-5 hover:bg-slate-50 rounded-lg">
+              <Link href="/">Home</Link>
+            </div>
+            <div className="p-5 hover:bg-slate-50 rounded-lg">
+              <Link href="/">Preturi</Link>
+            </div>
+            <div className="p-5 hover:bg-slate-50 rounded-lg">
+              <Link href="/">Galerie</Link>
+            </div>
+            <div className="p-5 hover:bg-slate-50 rounded-lg">
+              <Link href="/">Contact</Link>
+            </div>
+          </div>
+        </motion.div>
       </div>
-      {isMobileMenuVisible ? (
-        <div className="m-5 rounded-md shadow-md p-5 z-50">
-          <div className="w-full flex justify-center py-1 z-50 rounded-md hover:bg-slate-100">
-            <Link href="/">Home</Link>
-          </div>
-          <div className="w-full flex justify-center py-1 z-50 rounded-md hover:bg-slate-100">
-            <Link href="/">Preturi</Link>
-          </div>
-          <div className="w-full flex justify-center py-1 z-50 rounded-md hover:bg-slate-100">
-            <Link href="/">Galerie</Link>
-          </div>
-          <div className="w-full flex justify-center py-1 z-50 rounded-md hover:bg-slate-100">
-            <Link href="/">Servicii</Link>
-          </div>
-          <div className="w-full flex justify-center py-1 z-50 rounded-md hover:bg-slate-100">
-            <Link href="/">Contact</Link>
-          </div>
-        </div>
-      ) : (
-        <motion.div></motion.div>
-      )}
     </nav>
   );
 };

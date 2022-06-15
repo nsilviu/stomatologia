@@ -19,8 +19,8 @@ const Navbar = () => {
   };
 
   const mobileMenu = {
-    open: { opacity: 1, x: 0 },
-    closed: { opacity: 0, x: "100%" },
+    open: { opacity: 1, x: 0, duration: 0.4 },
+    closed: { opacity: 0, x: "50%", y: "-80%", scale: 0, transition: "spring" },
   };
 
   return (
@@ -29,12 +29,14 @@ const Navbar = () => {
         <div className="ml-5">
           <div className="flex flex-col cursor-pointer">
             <Link href="/">
-              <div className="text-2xl font-light xl:text-3xl">
+              <div className="text-2xl font-light md:text-4xl md:ml-16">
                 Stomatologia
               </div>
             </Link>
             <Link href="/">
-              <span className="text-3xl font-extrabold">Orto Implant</span>
+              <span className="text-3xl font-extrabold md:text-5xl md:ml-16">
+                Orto Implant
+              </span>
             </Link>
           </div>
         </div>
@@ -51,21 +53,47 @@ const Navbar = () => {
         <motion.div
           animate={isMobileMenuVisible ? "open" : "closed"}
           variants={mobileMenu}
-          className="fixed z-50 flex flex-col mt-24 w-full justify-end font-semibold align-middle rounded-lg bg-slate-200"
+          className=" shadow-lg z-50 mt-20 ml-4 left-0 right-0 absolute justify-end font-light align-middle rounded-lg mr-4 bg-slate-100"
         >
           <div className="flex flex-col p-3">
-            <div className="p-5 hover:bg-slate-50 rounded-lg">
-              <Link href="/">Home</Link>
-            </div>
-            <div className="p-5 hover:bg-slate-50 rounded-lg">
-              <Link href="/">Preturi</Link>
-            </div>
-            <div className="p-5 hover:bg-slate-50 rounded-lg">
-              <Link href="/">Galerie</Link>
-            </div>
-            <div className="p-5 hover:bg-slate-50 rounded-lg">
-              <Link href="/">Contact</Link>
-            </div>
+            <ul>
+              <li
+                className="py-3 px-2 hover:bg-white rounded-lg"
+                onClick={toggleMobileMenu}
+                href="/"
+              >
+                <Link href="/">Home</Link>
+              </li>
+
+              <li
+                className="py-3 px-2 hover:bg-white rounded-lg"
+                onClick={toggleMobileMenu}
+                src="/prices"
+              >
+                <Link href="/prices">Preturi</Link>
+              </li>
+
+              <li
+                className="py-3 px-2 hover:bg-white rounded-lg"
+                onClick={toggleMobileMenu}
+              >
+                <Link href="/">Galerie</Link>
+              </li>
+
+              <li
+                className="py-3 px-2 hover:bg-white rounded-lg"
+                onClick={toggleMobileMenu}
+              >
+                <Link href="/">Servicii</Link>
+              </li>
+
+              <li
+                className="py-3 px-2 hover:bg-white rounded-lg"
+                onClick={toggleMobileMenu}
+              >
+                <Link href="/">Contact</Link>
+              </li>
+            </ul>
           </div>
         </motion.div>
       </div>

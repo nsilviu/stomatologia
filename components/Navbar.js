@@ -25,16 +25,16 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="flex justify-between mt-4 ">
+      <div className="mt-4 flex justify-between ">
         <div className="ml-5">
-          <div className="flex flex-col cursor-pointer">
+          <div className="flex cursor-pointer flex-col">
             <Link href="/">
-              <div className="text-2xl font-light md:text-4xl md:ml-16">
+              <div className="text-2xl font-light md:ml-16 md:text-4xl">
                 Stomatologia
               </div>
             </Link>
             <Link href="/">
-              <span className="text-3xl font-extrabold md:text-5xl md:ml-16">
+              <span className="text-3xl font-extrabold md:ml-16 md:text-5xl">
                 Orto Implant
               </span>
             </Link>
@@ -43,22 +43,26 @@ const Navbar = () => {
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="flex self-center mr-4 p-2 rounded-md shadow-sm hover:bg-slate-100 cursor-pointer hover:shadow-md"
+          className="mr-4 flex cursor-pointer self-center rounded-md p-2 shadow-sm hover:bg-slate-100 hover:shadow-md"
           onClick={toggleMobileMenu}
         >
-          <motion.button initial="hidden" animate="visible" variants={variants}>
+          <motion.button
+            initial={"hidden"}
+            animate="visible"
+            variants={variants}
+          >
             {!isMobileMenuVisible ? <MenuIcon /> : <CloseIcon />}
           </motion.button>
         </motion.div>
         <motion.div
           animate={isMobileMenuVisible ? "open" : "closed"}
           variants={mobileMenu}
-          className=" shadow-lg z-50 mt-20 ml-4 left-0 right-0 absolute justify-end font-light align-middle rounded-lg mr-4 bg-slate-100"
+          className="absolute left-0 right-0 z-50 mt-20 ml-4 mr-4 justify-end rounded-lg bg-slate-100 align-middle font-light shadow-lg"
         >
           <div className="flex flex-col p-3">
             <ul>
               <li
-                className="py-3 px-2 hover:bg-white rounded-lg"
+                className="rounded-lg py-3 px-2 hover:bg-white"
                 onClick={toggleMobileMenu}
                 href="/"
               >
@@ -66,7 +70,7 @@ const Navbar = () => {
               </li>
 
               <li
-                className="py-3 px-2 hover:bg-white rounded-lg"
+                className="rounded-lg py-3 px-2 hover:bg-white"
                 onClick={toggleMobileMenu}
                 src="/prices"
               >
@@ -74,21 +78,21 @@ const Navbar = () => {
               </li>
 
               <li
-                className="py-3 px-2 hover:bg-white rounded-lg"
+                className="rounded-lg py-3 px-2 hover:bg-white"
                 onClick={toggleMobileMenu}
               >
                 <Link href="/">Galerie</Link>
               </li>
 
               <li
-                className="py-3 px-2 hover:bg-white rounded-lg"
+                className="rounded-lg py-3 px-2 hover:bg-white"
                 onClick={toggleMobileMenu}
               >
                 <Link href="/">Servicii</Link>
               </li>
 
               <li
-                className="py-3 px-2 hover:bg-white rounded-lg"
+                className="rounded-lg py-3 px-2 hover:bg-white"
                 onClick={toggleMobileMenu}
               >
                 <Link href="/">Contact</Link>

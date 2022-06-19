@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   const mobileMenu = {
-    open: { opacity: 1, x: 0, duration: 0.4 },
+    open: { opacity: 1, x: 0, duration: 0.4, scale: 1 },
     closed: { opacity: 0, x: "50%", y: "-80%", scale: 0, transition: "spring" },
   };
 
@@ -55,6 +55,7 @@ const Navbar = () => {
           </motion.button>
         </motion.div>
         <motion.div
+          initial={{ scale: 0 }}
           animate={isMobileMenuVisible ? "open" : "closed"}
           variants={mobileMenu}
           className="absolute left-0 right-0 z-50 mt-20 ml-4 mr-4 justify-end rounded-lg bg-slate-100 align-middle font-light shadow-lg"

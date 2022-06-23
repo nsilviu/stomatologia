@@ -4,6 +4,8 @@ import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
+import MenuItem from "./MenuItem";
+import { MenuItemsOptions } from "./MenuItemsOptions";
 
 const Navbar = () => {
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
@@ -62,42 +64,14 @@ const Navbar = () => {
         >
           <div className="flex flex-col p-3">
             <ul>
-              <li
-                className="rounded-lg py-3 px-2 hover:bg-white"
-                onClick={toggleMobileMenu}
-                href="/"
-              >
-                <Link href="/">Home</Link>
-              </li>
-
-              <li
-                className="rounded-lg py-3 px-2 hover:bg-white"
-                onClick={toggleMobileMenu}
-                src="/prices"
-              >
-                <Link href="/prices">Preturi</Link>
-              </li>
-
-              <li
-                className="rounded-lg py-3 px-2 hover:bg-white"
-                onClick={toggleMobileMenu}
-              >
-                <Link href="/">Galerie</Link>
-              </li>
-
-              <li
-                className="rounded-lg py-3 px-2 hover:bg-white"
-                onClick={toggleMobileMenu}
-              >
-                <Link href="/">Servicii</Link>
-              </li>
-
-              <li
-                className="rounded-lg py-3 px-2 hover:bg-white"
-                onClick={toggleMobileMenu}
-              >
-                <Link href="/">Contact</Link>
-              </li>
+              {MenuItemsOptions.map((option) => (
+                <MenuItem
+                  label={option.label}
+                  to={option.to}
+                  key={option.id}
+                  onClick={toggleMobileMenu}
+                />
+              ))}
             </ul>
           </div>
         </motion.div>

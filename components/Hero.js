@@ -1,9 +1,28 @@
-import React from "react";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState } from "react";
+import { slider } from "./images";
+import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 import { wrap } from "popmotion";
-import clamp from "lodash/clamp";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import range from "lodash/range";
+
+const Dots = ({ count, active }) => (
+  <div className="absolute top-full z-50 -mt-6 flex flex-row justify-center">
+    {range(count).map((i) => (
+      <>
+        <motion.div
+          className="mx-4 h-2 w-2 rounded-md bg-white opacity-80 shadow-lg"
+          initial={false}
+          animate={{
+            scale: active === i ? 1.5 : 1,
+            opacity: active === i ? 1 : 0.5,
+          }}
+        />
+      </>
+    ))}
+  </div>
+);
 
 const variants = {
   enter: (direction) => {
@@ -27,114 +46,65 @@ const variants = {
 };
 
 const swipeConfidenceThreshold = 10000;
-
 const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
 function Hero() {
-  const images = ["/slider-1.jpg", "/slider-2.jpg", "/slider-3.jpg"];
-
-  // first slider
   const [[page, direction], setPage] = useState([0, 0]);
 
-  const imageIndex = wrap(0, images.length, page);
+  const imageIndex = wrap(0, slider.length, page);
 
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
 
-  // const [position, setPosition] = useState(0);
-
-  // const handleRight = () => {
-  //   if (position < images.length - 1) {
-  //     setPosition(position + 1);
-  //   }
-  // };
-
-  // const handleLeft = () => {
-  //   if (position > 0) {
-  //     setPosition(position - 1);
-  //   }
-  // };
   return (
-    <>
-      {/* <div className="relative mx-4 mt-3 flex h-[50vh] w-[100vw] overflow-hidden rounded-lg">
-        {images.map((url, index) => (
-          <motion.div
-            className="absolute "
-            key={index}
-            initial={{ scale: 0 }}
-            animate={{
-              rotate: 0,
-              left: `${(index - position) * 60 - 30}vw`,
-              scale: index === position ? 1 : 0,
-              opacity: index === position ? 1 : 0,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 260,
-              damping: 20,
-            }}
-            drag="x"
-          >
-            <img src={url} className="w-full rounded-lg object-cover" />
-          </motion.div>
-        ))}
-      </div>
-      <div className="flex justify-center">
-        <button
-          className="m-5 rounded-lg bg-slate-200 p-5 hover:bg-slate-300"
-          onClick={handleLeft}
-        >
-          Left
-        </button>
-        <button
-          className="m-5 rounded-lg bg-slate-200 p-5 hover:bg-slate-300"
-          onClick={handleRight}
-        >
-          Right
-        </button>
-      </div> */}
-      {/* First version of the slider */}
-      <div className="m-5">
-        <AnimatePresence initial={false} custom={direction}>
-          <div className="z-50 rounded-lg">
-            <motion.img
-              layout="fill"
-              className="rounded-lg shadow-lg"
-              key={page}
-              src={images[imageIndex]}
-              custom={direction}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{
-                x: {
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 20,
-                },
-                opacity: { duration: 0.2 },
-              }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={1}
-              onDragEnd={(e, { offset, velocity }) => {
-                const swipe = swipePower(offset.x, velocity.x);
+    <div className="relative m-4 flex h-[30vh] flex-row justify-center md:left-1/2 md:h-[50vh] md:w-[80vw]">
+      <motion.img
+        className="w-full rounded-xl object-cover shadow-sm"
+        key={page}
+        src={slider[imageIndex]}
+        custom={direction}
+        variants={variants}
+        initial="enter"
+        animate="center"
+        exit="exit"
+        transition={{
+          x: { type: "spring", stiffness: 300, damping: 30, bounce: 0 },
+          opacity: 0.2,
+        }}
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={1}
+        onDragEnd={(e, { offset, velocity }) => {
+          const swipe = swipePower(offset.x, velocity.x);
+          if (swipe < -swipeConfidenceThreshold) {
+            paginate(1);
+          } else if (swipe > swipeConfidenceThreshold) {
+            paginate(-1);
+          }
+        }}
+      />
+      <Dots count={slider.length} active={imageIndex} />
 
-                if (swipe < -swipeConfidenceThreshold) {
-                  paginate(1);
-                } else if (swipe > swipeConfidenceThreshold) {
-                  paginate(-1);
-                }
-              }}
-            />
-          </div>
-        </AnimatePresence>
-      </div>
-    </>
+      <motion.button
+        className="absolute left-0 top-[45%] z-50 mx-2 cursor-pointer select-none  rounded-lg bg-white p-2 align-middle shadow-sm hover:bg-slate-200"
+        onClick={() => paginate(-1)}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <ArrowBackIosIcon />
+      </motion.button>
+      <motion.button
+        className="absolute top-[45%] right-0 z-50 mx-2 cursor-pointer select-none rounded-lg bg-white p-2 align-middle shadow-sm hover:bg-slate-200"
+        onClick={() => paginate(1)}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <ArrowForwardIosIcon />
+      </motion.button>
+    </div>
   );
 }
 

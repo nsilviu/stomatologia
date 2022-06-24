@@ -1,7 +1,5 @@
 import Hero from "../components/Hero";
-import Layout from "../components/Layout";
-import Navbar from "../components/Navbar";
-import Button from "../components/Button";
+import ServiceHero from "../components/ServiceHero";
 import { CallIcon } from "../components/svgs";
 
 export default function Home() {
@@ -10,9 +8,9 @@ export default function Home() {
       <section>
         <Hero />
       </section>
-      <div>
-        <Button link="tel:0744492444" text="Suna acum!" icon={<CallIcon />} />
-      </div>
+      <section>
+        <ServiceHero />
+      </section>
     </>
   );
 }

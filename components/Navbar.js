@@ -1,11 +1,12 @@
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
 import MenuItem from "./MenuItem";
 import { MenuItemsOptions } from "./MenuItemsOptions";
+import { Button } from "./Button";
+import { CallIcon } from "./svgs";
 
 const Navbar = () => {
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
@@ -27,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="mt-4 flex justify-between ">
+      <div className="mt-4 flex justify-between align-middle ">
         <div className="ml-5">
           <div className="flex cursor-pointer flex-col">
             <Link href="/">
@@ -41,6 +42,9 @@ const Navbar = () => {
               </span>
             </Link>
           </div>
+        </div>
+        <div className="flex align-middle">
+          <Button link="tel:0744492444" text="Suna acum!" icon={<CallIcon />} />
         </div>
         <motion.div
           whileHover={{ scale: 1.1 }}

@@ -1,17 +1,28 @@
 import { motion } from "framer-motion";
 
-const Button = (props) => {
+export const Button = (props) => {
   const { link, text, icon } = props;
 
   return (
-    <div className="mx-4">
+    <div className="flex align-middle">
       <motion.a
-        className=" inline-flex w-full items-center justify-between rounded-xl bg-teal-500 px-5 py-3 text-xl text-slate-100 hover:bg-teal-600 hover:text-teal-100"
+        className="inline-flex 
+        items-center 
+        justify-between 
+        self-center 
+        rounded-xl 
+        bg-teal-500 text-lg 
+        font-bold 
+        text-slate-100 
+        shadow-md
+        hover:bg-teal-600
+        hover:text-teal-100"
         href={link}
-        animate={{}}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
       >
-        <span className="inline-block w-10 fill-current">{icon}</span>
-        <span className="inline-block">{text}</span>
+        <span className="m-2 inline-block w-5 fill-current">{icon}</span>
+        <span className="m-2 inline-block">{text}</span>
       </motion.a>
     </div>
   );

@@ -44,7 +44,12 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex align-middle">
-          <Button link="tel:0744492444" text="Suna acum!" icon={<CallIcon />} />
+          <Button
+            style=""
+            link="tel:0744492444"
+            text="Suna acum!"
+            icon={<CallIcon />}
+          />
         </div>
         <motion.div
           whileHover={{ scale: 1.1 }}

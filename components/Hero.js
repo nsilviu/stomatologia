@@ -60,8 +60,8 @@ function Hero() {
   };
 
   return (
-    <div className="justify center flex">
-      <div className="relative m-4 flex h-[30vh] flex-row justify-center md:h-[50vh] md:w-[80vw]">
+    <div className="flex justify-center">
+      <div className="relative m-4 flex h-[30vh] w-full flex-row justify-center md:h-[50vh] md:w-[80vw]">
         <motion.img
           className="w-full rounded-xl object-cover shadow-sm"
           key={page}

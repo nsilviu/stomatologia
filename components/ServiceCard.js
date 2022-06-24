@@ -7,15 +7,15 @@ export const ServiceCard = (props) => {
   const trimmedLength = description.substring(0, 30);
 
   return (
-    <div className="mx-4 mb-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 p-2 text-white shadow-md">
+    <div className="mr-4 min-h-full min-w-[50%] rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 p-2 text-white shadow-md">
       <div>{icon}</div>
       <h1 className="mb-4 flex w-full justify-center rounded-md text-xl font-bold">
         {title}
       </h1>
       <p className="text-xs font-light">{trimmedLength}...</p>
-      <div className="relative mt-5 flex justify-center">
+      <div className="relative mt-5 flex justify-center ">
         <Button
-          className="absolute text-xs"
+          textStyle="text-xs"
           link="/services/ortodontie"
           text="Descopera"
           icon={<Info />}

@@ -60,50 +60,52 @@ function Hero() {
   };
 
   return (
-    <div className="relative m-4 flex h-[30vh] flex-row justify-center md:left-1/2 md:h-[50vh] md:w-[80vw]">
-      <motion.img
-        className="w-full rounded-xl object-cover shadow-sm"
-        key={page}
-        src={slider[imageIndex]}
-        custom={direction}
-        variants={variants}
-        initial="enter"
-        animate="center"
-        exit="exit"
-        transition={{
-          x: { type: "spring", stiffness: 300, damping: 30, bounce: 0 },
-          opacity: 0.2,
-        }}
-        drag="x"
-        dragConstraints={{ left: 0, right: 0 }}
-        dragElastic={1}
-        onDragEnd={(e, { offset, velocity }) => {
-          const swipe = swipePower(offset.x, velocity.x);
-          if (swipe < -swipeConfidenceThreshold) {
-            paginate(1);
-          } else if (swipe > swipeConfidenceThreshold) {
-            paginate(-1);
-          }
-        }}
-      />
-      <Dots count={slider.length} active={imageIndex} />
+    <div className="justify center flex">
+      <div className="relative m-4 flex h-[30vh] flex-row justify-center md:h-[50vh] md:w-[80vw]">
+        <motion.img
+          className="w-full rounded-xl object-cover shadow-sm"
+          key={page}
+          src={slider[imageIndex]}
+          custom={direction}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{
+            x: { type: "spring", stiffness: 300, damping: 30, bounce: 0 },
+            opacity: 0.2,
+          }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={1}
+          onDragEnd={(e, { offset, velocity }) => {
+            const swipe = swipePower(offset.x, velocity.x);
+            if (swipe < -swipeConfidenceThreshold) {
+              paginate(1);
+            } else if (swipe > swipeConfidenceThreshold) {
+              paginate(-1);
+            }
+          }}
+        />
+        <Dots count={slider.length} active={imageIndex} />
 
-      <motion.button
-        className="absolute left-0 top-[45%] z-50 mx-2 cursor-pointer select-none  rounded-lg bg-white p-2 align-middle shadow-sm hover:bg-slate-200"
-        onClick={() => paginate(-1)}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        <ArrowBackIosIcon />
-      </motion.button>
-      <motion.button
-        className="absolute top-[45%] right-0 z-50 mx-2 cursor-pointer select-none rounded-lg bg-white p-2 align-middle shadow-sm hover:bg-slate-200"
-        onClick={() => paginate(1)}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        <ArrowForwardIosIcon />
-      </motion.button>
+        <motion.button
+          className="absolute left-0 top-[45%] z-50 mx-2 cursor-pointer select-none  rounded-lg bg-white p-2 align-middle shadow-sm hover:bg-slate-200"
+          onClick={() => paginate(-1)}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <ArrowBackIosIcon />
+        </motion.button>
+        <motion.button
+          className="absolute top-[45%] right-0 z-50 mx-2 cursor-pointer select-none rounded-lg bg-white p-2 align-middle shadow-sm hover:bg-slate-200"
+          onClick={() => paginate(1)}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <ArrowForwardIosIcon />
+        </motion.button>
+      </div>
     </div>
   );
 }

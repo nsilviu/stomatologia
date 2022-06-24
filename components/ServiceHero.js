@@ -3,7 +3,7 @@ import { ServicesList } from "./ServicesList";
 
 const ServiceHero = () => {
   return (
-    <div className="m-2 flex flex-row">
+    <div className=" flex flex-row overflow-hidden">
       {ServicesList.map((option) => (
         <ServiceCard
           title={option.title}

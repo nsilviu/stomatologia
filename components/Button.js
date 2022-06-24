@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 export const Button = (props) => {
-  const { link, text, icon } = props;
+  const { link, text, icon, style } = props;
 
   return (
     <div className="flex align-middle">
@@ -11,9 +11,8 @@ export const Button = (props) => {
         justify-between 
         self-center 
         rounded-xl 
-        bg-teal-500 text-lg 
-        font-bold 
-        text-slate-100 
+        bg-teal-500
+        text-slate-100
         shadow-md
         hover:bg-teal-600
         hover:text-teal-100"
@@ -22,7 +21,9 @@ export const Button = (props) => {
         whileTap={{ scale: 0.95 }}
       >
         <span className="m-2 inline-block w-5 fill-current">{icon}</span>
-        <span className="m-2 inline-block">{text}</span>
+        <span className="m-2 inline-block">
+          <span className="text-xs">{text}</span>
+        </span>
       </motion.a>
     </div>
   );

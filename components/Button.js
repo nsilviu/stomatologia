@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 
 export const Button = (props) => {
-  const { link, text, icon, buttonStyle, iconStyle, textStyle } = props;
+  const { link, text, icon, buttonStyle, iconStyle, textStyle, key } = props;
 
   return (
     <div className="flex align-middle">
       <motion.a
+        key={text}
         className={`${buttonStyle}
         inline-flex 
         items-center 

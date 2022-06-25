@@ -11,24 +11,31 @@ const ServiceHero = () => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
   }, []);
   return (
-    <motion.div
-      ref={carousel}
-      className="carousel m-3 overflow-hidden rounded-lg p-1 "
-    >
+    <div className="flex flex-col justify-center">
+      <div className="flex justify-center">
+        <h1 className="inline-block justify-center text-3xl font-light">
+          Servicii
+        </h1>
+      </div>
       <motion.div
-        className="flex flex-row   "
-        drag="x"
-        dragConstraints={{ right: 0, left: -width }}
+        ref={carousel}
+        className="carousel m-3 overflow-hidden rounded-lg p-1 "
       >
-        {ServicesList.map((option) => (
-          <ServiceCard
-            title={option.title}
-            key={option.id}
-            description={option.text}
-          />
-        ))}
+        <motion.div
+          className="flex flex-row"
+          drag="x"
+          dragConstraints={{ right: 0, left: -width }}
+        >
+          {ServicesList.map((option) => (
+            <ServiceCard
+              title={option.title}
+              key={option.id}
+              description={option.text}
+            />
+          ))}
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

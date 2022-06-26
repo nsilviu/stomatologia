@@ -3,6 +3,7 @@ import ServiceHero from "../components/ServiceHero";
 import Image from "next/image";
 import { CallIcon } from "../components/svgs";
 import Gallery from "../components/Gallery";
+import TeamHero from "../components/TeamHero";
 
 export default function Home() {
   return (
@@ -15,6 +16,9 @@ export default function Home() {
       </section>
       <section>
         <Gallery />
+      </section>
+      <section>
+        <TeamHero />
       </section>
     </>
   );

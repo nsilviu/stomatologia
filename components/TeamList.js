@@ -17,7 +17,7 @@ export const TeamList = [
     title: "Dr. Adriana Popescu",
     photo: "/doctor3.jpg",
     description: "Stomatologie Generala",
-    subtitel: "Asistenta",
+    subtitle: "Asistenta",
     id: 3,
   },
   {

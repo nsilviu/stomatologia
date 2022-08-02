@@ -1,5 +1,10 @@
 import PriceTable from "../components/PriceTable";
+import { EstFac } from "../components/PricesList";
 
-export default function Home() {
-  return <PriceTable />;
+export default function Prices() {
+  return (
+    <div>
+      <PriceTable />
+    </div>
+  );
 }

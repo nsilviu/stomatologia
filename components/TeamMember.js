@@ -4,26 +4,6 @@ const TeamMember = (props) => {
   const { photo, id, title, description, subtitle } = props;
   return (
     <div>
-      {/* <div className="flex w-full flex-col flex-wrap justify-center rounded-lg p-2 shadow-lg">
-        <div className="m-4 flex justify-center">
-          <img
-            className="inline-block w-[40vw] rounded-xl object-cover"
-            src="/doctor1.jpg"
-          />
-        </div>
-        <h1 className="mb-5 inline-block text-center text-2xl font-bold">
-          <span>Dr. Lavinia Irina Ardalau</span>
-        </h1>
-
-        <h2 className="text mx-5 text-end">
-          <span>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
-            amet dolor at magna varius feugiat in vitae lacus. Nam blandit
-            lobortis vestibulum.
-          </span>
-        </h2>
-      </div> */}
-
       <div className="mx-4 mb-6 mt-20 flex w-[calc(100vw-2rem)] flex-row flex-wrap items-center lg:my-0 lg:h-screen">
         {/* <!--Main Col--> */}
         <div

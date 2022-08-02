@@ -1,10 +1,74 @@
 import PriceTable from "../components/PriceTable";
-import { EstFac } from "../components/PricesList";
+import {
+  EstDentara,
+  EstFac,
+  Ortodontie,
+  Plombe,
+  Profilaxie,
+  TratChirurgical,
+  TratEndodontic,
+  TratProtetic,
+} from "../components/PricesList";
 
 export default function Prices() {
   return (
-    <div>
-      <PriceTable serviceName={EstFac.serviceName} />
-    </div>
+    <>
+      <div>
+        <PriceTable
+          title={EstFac.title}
+          serviceName={EstFac.serviceName}
+          servicePrice={EstFac.servicePrice}
+        />
+      </div>
+      <div>
+        <PriceTable
+          title={EstDentara.title}
+          serviceName={EstDentara.serviceName}
+          servicePrice={EstDentara.servicePrice}
+        />
+      </div>
+      <div>
+        <PriceTable
+          title={Ortodontie.title}
+          serviceName={Ortodontie.serviceName}
+          servicePrice={Ortodontie.servicePrice}
+        />
+      </div>
+      <div>
+        <PriceTable
+          title={Profilaxie.title}
+          serviceName={Profilaxie.serviceName}
+          servicePrice={Profilaxie.servicePrice}
+        />
+      </div>
+      <div>
+        <PriceTable
+          title={Plombe.title}
+          serviceName={Plombe.serviceName}
+          servicePrice={Profilaxie.servicePrice}
+        />
+      </div>
+      <div>
+        <PriceTable
+          title={TratEndodontic.title}
+          serviceName={TratEndodontic.serviceName}
+          servicePrice={TratEndodontic.servicePrice}
+        />
+      </div>
+      <div>
+        <PriceTable
+          title={TratProtetic.title}
+          serviceName={TratProtetic.serviceName}
+          servicePrice={TratProtetic.servicePrice}
+        />
+      </div>
+      <div>
+        <PriceTable
+          title={TratChirurgical.title}
+          serviceName={TratChirurgical.serviceName}
+          servicePrice={TratChirurgical.servicePrice}
+        />
+      </div>
+    </>
   );
 }

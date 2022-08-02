@@ -4,7 +4,7 @@ import { EstFac } from "../components/PricesList";
 export default function Prices() {
   return (
     <div>
-      <PriceTable />
+      <PriceTable serviceName={EstFac.serviceName} />
     </div>
   );
 }

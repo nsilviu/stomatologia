@@ -31,6 +31,7 @@ const ServiceHero = () => {
               title={option.title}
               key={option.id}
               description={option.text}
+              to={option.link}
             />
           ))}
         </motion.div>

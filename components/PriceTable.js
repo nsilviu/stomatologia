@@ -3,30 +3,29 @@ import React from "react";
 function PriceTable(props) {
   const { title, serviceName, servicePrice } = props;
   return (
-    <div className="m-4 flex flex-col rounded-md bg-white text-center  text-slate-900 shadow-md">
+    <div className="mx-4 my-10 flex flex-col rounded-md bg-white text-center  text-slate-900 shadow-md">
       <span className="mt-2 text-2xl font-bold">{title}</span>
-      <div className=" m-4 flex flex-row justify-around">
-        <div className="flex flex-col justify-evenly">
-          {serviceName.map((option, index) => {
-            return (
-              <span
-                className="justify-evenly p-2 text-right text-xs"
-                key={index}
-              >
-                {option}
-              </span>
-            );
-          })}
-        </div>
-        <div className="flex w-1/2 flex-col justify-evenly">
-          {servicePrice.map((option, index) => {
-            return (
-              <span key={index} className="p-2 text-left text-xs text-teal-500">
-                {option}
-              </span>
-            );
-          })}
-        </div>
+      <div className="mt-5 grid grid-flow-row-dense grid-cols-2">
+        {serviceName.map((option, index) => {
+          return (
+            <div
+              className="col-start-1 m-4 self-center text-left text-xs"
+              key={index}
+            >
+              {option}
+            </div>
+          );
+        })}
+        {servicePrice.map((option, index) => {
+          return (
+            <div
+              key={index}
+              className="col-start-2 self-center text-center text-teal-500"
+            >
+              {option}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -45,7 +45,7 @@ export default function Prices() {
         <PriceTable
           title={Plombe.title}
           serviceName={Plombe.serviceName}
-          servicePrice={Profilaxie.servicePrice}
+          servicePrice={Plombe.servicePrice}
         />
       </div>
       <div>

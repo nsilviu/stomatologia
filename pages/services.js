@@ -1,16 +1,21 @@
 import { ServiceCard } from "../components/ServiceCard";
 import { ServicesList } from "../components/ServicesList";
+import Hero from "../components/Hero";
 
 export default function Services() {
   return (
     <>
-      <div>
+      <section>
+        <Hero />
+      </section>
+      <div className="grid grid-flow-dense grid-cols-2 p-4">
         {ServicesList.map((option) => (
           <ServiceCard
             title={option.title}
             key={option.id}
             description={option.text}
             to={option.link}
+            descriptionLength={400}
           />
         ))}
       </div>

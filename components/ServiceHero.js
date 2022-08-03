@@ -11,7 +11,7 @@ const ServiceHero = () => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
   }, []);
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center p-4">
       <div className="flex justify-center">
         <h1 className="inline-block justify-center text-3xl font-light">
           Servicii
@@ -19,10 +19,10 @@ const ServiceHero = () => {
       </div>
       <motion.div
         ref={carousel}
-        className="carousel m-3 overflow-hidden rounded-lg p-1 "
+        className="carousel overflow-hidden rounded-lg"
       >
         <motion.div
-          className="flex flex-row"
+          className="flex"
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
         >
@@ -32,6 +32,7 @@ const ServiceHero = () => {
               key={option.id}
               description={option.text}
               to={option.link}
+              descriptionLength={150}
             />
           ))}
         </motion.div>

@@ -11,9 +11,9 @@ const ServiceHero = () => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
   }, []);
   return (
-    <div className="flex flex-col justify-center p-4">
+    <div className="flex flex-col px-4">
       <div className="flex justify-center">
-        <h1 className="inline-block justify-center text-3xl font-light">
+        <h1 className="mb-4 inline-block text-center text-3xl font-bold text-slate-600">
           Servicii
         </h1>
       </div>

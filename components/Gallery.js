@@ -42,27 +42,32 @@ const Gallery = () => {
   }
 
   return (
-    <div className="m-4 flex flex-row">
-      <AnimateSharedLayout type="crossfade">
-        <div className="relative h-80 min-w-[80vw] ">
-          <AnimatePresence>
-            <motion.img
-              key={primaryGalleryId}
-              src={`/gallery${primaryGalleryId}.jpg`}
-              alt=""
-              layoutId={`gallery-${primaryGalleryId}`}
-              className="absolute left-0 min-h-full w-full rounded-xl object-cover shadow-md"
-            />
-          </AnimatePresence>
-        </div>
-        <div className="z-1 ml-2">
-          <AnimatePresence>
-            {galleryIds.map((id) => (
-              <SideImages id={id} key={id} onExpand={setAsPrimary} />
-            ))}
-          </AnimatePresence>
-        </div>
-      </AnimateSharedLayout>
+    <div className="flex flex-col">
+      <h1 className="my-4 inline-block text-center text-3xl font-bold text-slate-600">
+        Galerie
+      </h1>
+      <div className="mx-4 flex flex-row">
+        <AnimateSharedLayout type="crossfade">
+          <div className="relative h-80 min-w-[80vw] ">
+            <AnimatePresence>
+              <motion.img
+                key={primaryGalleryId}
+                src={`/gallery${primaryGalleryId}.jpg`}
+                alt=""
+                layoutId={`gallery-${primaryGalleryId}`}
+                className="absolute left-0 min-h-full w-full rounded-xl object-cover shadow-md"
+              />
+            </AnimatePresence>
+          </div>
+          <div className="z-1 ml-2">
+            <AnimatePresence>
+              {galleryIds.map((id) => (
+                <SideImages id={id} key={id} onExpand={setAsPrimary} />
+              ))}
+            </AnimatePresence>
+          </div>
+        </AnimateSharedLayout>
+      </div>
     </div>
   );
 };

@@ -4,11 +4,11 @@ const TeamMember = (props) => {
   const { photo, id, title, description, subtitle } = props;
   return (
     <div>
-      <div className="mx-4 mb-6 mt-20 flex w-[calc(100vw-2rem)] flex-row flex-wrap items-center lg:my-0 lg:h-screen">
+      <div className="mx-4 mb-6 mt-10 flex w-[calc(100vw-2rem)] flex-row flex-wrap items-center lg:my-0 lg:h-screen">
         {/* <!--Main Col--> */}
         <div
           id="profile"
-          className="w-full rounded-xl bg-white shadow-md lg:mx-0 lg:w-3/5 lg:rounded-l-lg lg:rounded-r-none"
+          className="w-full rounded-xl  bg-gradient-to-r from-cyan-500 to-blue-500 p-2 text-white shadow-md lg:mx-0 lg:w-3/5 lg:rounded-l-lg lg:rounded-r-none"
         >
           <div className="p-4 text-center md:p-12 lg:text-left">
             {/* <!-- Image for mobile view--> */}
@@ -22,10 +22,10 @@ const TeamMember = (props) => {
               ></Image>
             </div>
             <h1 className="pt-8 text-3xl font-bold lg:pt-0">{title}</h1>
-            <div className="mx-auto w-4/5 border-b-2 border-blue-500 pt-3 lg:mx-0"></div>
+            <div className="mx-auto w-4/5 border-b-2 border-blue-100 pt-3 lg:mx-0"></div>
             <p className="flex items-center justify-center pt-4 text-base font-bold  lg:justify-start">
               <svg
-                className="h-4 fill-current pr-4 text-blue-500"
+                className="h-4 fill-current pr-4 text-blue-100"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >
@@ -33,9 +33,9 @@ const TeamMember = (props) => {
               </svg>
               {description}
             </p>
-            <p className="flex items-center justify-center pt-2 text-xs text-gray-600 lg:justify-start lg:text-sm">
+            <p className="flex items-center justify-center pt-2 text-xs lg:justify-start lg:text-sm">
               <svg
-                className="h-4 fill-current pr-4 text-blue-500"
+                className="h-4 fill-current pr-4 text-blue-100"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >

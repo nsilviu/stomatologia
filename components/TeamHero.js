@@ -12,26 +12,31 @@ const TeamHero = (option) => {
   }, []);
 
   return (
-    <motion.div
-      ref={carousel}
-      className="align-st relative flex flex-row flex-nowrap overflow-hidden"
-    >
+    <div className="flex flex-col">
+      <h1 className="my-4 inline-block text-center text-3xl font-bold text-slate-600">
+        Echipa noastra
+      </h1>
       <motion.div
-        className="flex flex-row"
-        drag="x"
-        dragConstraints={{ right: 0, left: -width }}
+        ref={carousel}
+        className="align-st relative flex flex-row flex-nowrap overflow-hidden"
       >
-        {TeamList.map((option) => (
-          <TeamMember
-            title={option.title}
-            key={option.id}
-            description={option.description}
-            photo={option.photo}
-            subtitle={option.subtitle}
-          />
-        ))}
+        <motion.div
+          className="flex flex-row"
+          drag="x"
+          dragConstraints={{ right: 0, left: -width }}
+        >
+          {TeamList.map((option) => (
+            <TeamMember
+              title={option.title}
+              key={option.id}
+              description={option.description}
+              photo={option.photo}
+              subtitle={option.subtitle}
+            />
+          ))}
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

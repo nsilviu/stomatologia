@@ -8,15 +8,17 @@ export default function Services() {
       <section>
         <Hero />
       </section>
-      <div className="grid grid-flow-dense grid-cols-2 p-4">
+      <div className="grid grid-flow-dense grid-cols-1 justify-center p-4">
         {ServicesList.map((option) => (
-          <ServiceCard
-            title={option.title}
-            key={option.id}
-            description={option.text}
-            to={option.link}
-            descriptionLength={400}
-          />
+          <div key={option.id} className="mb-2">
+            <ServiceCard
+              title={option.title}
+              key={option.id}
+              description={option.text}
+              to={option.link}
+              descriptionLength={400}
+            />
+          </div>
         ))}
       </div>
     </>

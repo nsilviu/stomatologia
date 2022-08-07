@@ -28,6 +28,7 @@ const ServiceHero = () => {
         >
           {ServicesList.map((option) => (
             <ServiceCard
+              style={"mr-4 min-w-[48%]"}
               title={option.title}
               key={option.id}
               description={option.text}

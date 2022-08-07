@@ -1,7 +1,5 @@
 import Hero from "../components/Hero";
 import ServiceHero from "../components/ServiceHero";
-import Image from "next/image";
-import { CallIcon } from "../components/svgs";
 import Gallery from "../components/Gallery";
 import TeamHero from "../components/TeamHero";
 

@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="mt-4 flex justify-between align-middle ">
+      <div className="mt-4 flex justify-between align-middle">
         <div className="ml-5">
           <div className="flex cursor-pointer flex-col">
             <Link href="/">
@@ -45,7 +45,8 @@ const Navbar = () => {
         </div>
         <div className="flex align-middle">
           <Button
-            style=""
+            buttonStyle="p-1 rounded-lg"
+            textStyle="text-xl"
             link="tel:0744492444"
             text="Suna acum!"
             icon={<CallIcon />}

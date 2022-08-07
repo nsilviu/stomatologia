@@ -13,7 +13,7 @@ export const Button = (props) => {
         justify-between 
         self-center 
         rounded-xl 
-        bg-teal-500
+        bg-teal-500    
         text-slate-100
         shadow-md
         hover:bg-teal-600

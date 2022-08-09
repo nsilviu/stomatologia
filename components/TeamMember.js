@@ -1,10 +1,12 @@
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
+import Button from "./Button";
 
 const TeamMember = (props) => {
   const { photo, id, title, description, subtitle } = props;
   return (
     <div>
-      <div className="mx-4 mb-6 mt-10 flex w-[calc(100vw-2rem)] flex-row flex-wrap items-center lg:my-0 lg:h-screen">
+      <div className="mx-4 mb-6 mt-10 flex w-[calc(100vw-2rem)] flex-row flex-wrap items-center justify-center lg:my-0 lg:h-screen">
         {/* <!--Main Col--> */}
         <div
           id="profile"
@@ -44,10 +46,13 @@ const TeamMember = (props) => {
               {subtitle}
             </p>
 
-            <div className="pt-12 pb-8">
-              <button className="rounded-full bg-green-700 py-2 px-4 font-bold text-white hover:bg-green-900">
-                Programeza-te
-              </button>
+            <div className="flex justify-center pt-12 pb-8">
+              <Button
+                link={"tel:0785779776"}
+                text={"Contact"}
+                icon={faPhone}
+                buttonStyle={"p-2"}
+              />
             </div>
           </div>
         </div>

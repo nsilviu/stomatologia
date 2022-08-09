@@ -7,6 +7,8 @@ import MenuItem from "./MenuItem";
 import { MenuItemsOptions } from "./MenuItemsOptions";
 import { Button } from "./Button";
 import { CallIcon } from "./svgs";
+import { faPhone, faTooth } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Navbar = () => {
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
@@ -29,7 +31,13 @@ const Navbar = () => {
   return (
     <nav>
       <div className="mt-4 flex justify-between align-middle">
-        <div className="ml-5">
+        <div className="ml-5 flex flex-row align-middle">
+          <Link href="/">
+            <FontAwesomeIcon
+              className="fa-2xl mr-2 self-center"
+              icon={faTooth}
+            />
+          </Link>
           <div className="flex cursor-pointer flex-col">
             <Link href="/">
               <div className="text-2xl font-light md:ml-16 md:text-4xl">
@@ -45,11 +53,10 @@ const Navbar = () => {
         </div>
         <div className="flex align-middle">
           <Button
-            buttonStyle="p-1 rounded-lg"
-            textStyle="text-xl"
-            link="tel:0744492444"
-            text="Suna acum!"
-            icon={<CallIcon />}
+            link={"tel:0785779776"}
+            text={"Contact"}
+            icon={faPhone}
+            buttonStyle={"p-2"}
           />
         </div>
         <motion.div

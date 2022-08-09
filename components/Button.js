@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Button = (props) => {
   const { link, text, icon, buttonStyle, iconStyle, textStyle, key } = props;
@@ -23,7 +24,7 @@ export const Button = (props) => {
         whileTap={{ scale: 0.95 }}
       >
         <span className={`${iconStyle} m-1 inline-block w-5 fill-current`}>
-          {icon}
+          <FontAwesomeIcon icon={icon} />
         </span>
         <span className={`${textStyle} m-1 inline-block`}>{text}</span>
       </motion.a>

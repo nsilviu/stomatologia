@@ -1,10 +1,15 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTooth } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
 function PriceTable(props) {
   const { title, serviceName, servicePrice } = props;
   return (
     <div className="mx-4 my-10 flex flex-col rounded-md bg-white text-center  text-slate-900 shadow-md">
-      <span className="mt-2 text-2xl font-bold">{title}</span>
+      <span className="mt-2 text-2xl font-bold">
+        <FontAwesomeIcon className="fa-xs mr-2" icon={faTooth} />
+        {title}
+      </span>
       <div className="mt-5 grid grid-flow-row-dense grid-cols-2">
         {serviceName.map((option, index) => {
           return (

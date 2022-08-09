@@ -1,5 +1,5 @@
+import { faInfo, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import Button from "./Button";
-import { Info } from "./svgs";
 
 export const ServiceCard = (props) => {
   const { title, description, to, icon, descriptionLength, style } = props;
@@ -21,7 +21,7 @@ export const ServiceCard = (props) => {
           buttonStyle="p-1"
           link={to}
           text="Descopera"
-          icon={<Info />}
+          icon={faInfoCircle}
         />
       </div>
     </div>

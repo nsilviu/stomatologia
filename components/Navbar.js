@@ -32,66 +32,70 @@ const Navbar = () => {
     <nav>
       <div className="mt-4 flex justify-between align-middle">
         <div className="ml-5 flex flex-row align-middle">
-          <Link href="/">
-            <FontAwesomeIcon
-              className="fa-2xl mr-2 self-center"
-              icon={faTooth}
+          <div className="flex flex-row align-middle">
+            <Link href="/">
+              <FontAwesomeIcon
+                className="fa-2xl m-2 self-center md:text-7xl"
+                icon={faTooth}
+              />
+            </Link>
+            <div className="flex cursor-pointer flex-col">
+              <Link href="/">
+                <div className="text-2xl font-light  md:text-4xl">
+                  Stomatologia
+                </div>
+              </Link>
+              <Link href="/">
+                <span className="text-3xl font-extrabold md:text-5xl">
+                  Orto Implant
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-row align-middle">
+          <div className="flex align-middle">
+            <Button
+              link={"tel:0785779776"}
+              text={"Contact"}
+              icon={faPhone}
+              buttonStyle={"p-2"}
             />
-          </Link>
-          <div className="flex cursor-pointer flex-col">
-            <Link href="/">
-              <div className="text-2xl font-light md:ml-16 md:text-4xl">
-                Stomatologia
-              </div>
-            </Link>
-            <Link href="/">
-              <span className="text-3xl font-extrabold md:ml-16 md:text-5xl">
-                Orto Implant
-              </span>
-            </Link>
           </div>
-        </div>
-        <div className="flex align-middle">
-          <Button
-            link={"tel:0785779776"}
-            text={"Contact"}
-            icon={faPhone}
-            buttonStyle={"p-2"}
-          />
-        </div>
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          className="mr-4 flex cursor-pointer self-center rounded-md p-2 shadow-sm hover:bg-slate-100 hover:shadow-md"
-          onClick={toggleMobileMenu}
-        >
-          <motion.button
-            initial={"hidden"}
-            animate="visible"
-            variants={variants}
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="mr-4 ml-4 flex cursor-pointer self-center rounded-md p-2 shadow-sm hover:bg-slate-100 hover:shadow-md"
+            onClick={toggleMobileMenu}
           >
-            {!isMobileMenuVisible ? <MenuIcon /> : <CloseIcon />}
-          </motion.button>
-        </motion.div>
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={isMobileMenuVisible ? "open" : "closed"}
-          variants={mobileMenu}
-          className="absolute left-0 right-0 z-50 mt-20 ml-4 mr-4 justify-end rounded-lg bg-slate-100 align-middle font-light shadow-lg"
-        >
-          <div className="flex flex-col p-3">
-            <ul>
-              {MenuItemsOptions.map((option) => (
-                <MenuItem
-                  label={option.label}
-                  to={option.to}
-                  key={option.id}
-                  onClick={toggleMobileMenu}
-                />
-              ))}
-            </ul>
-          </div>
-        </motion.div>
+            <motion.button
+              initial={"hidden"}
+              animate="visible"
+              variants={variants}
+            >
+              {!isMobileMenuVisible ? <MenuIcon /> : <CloseIcon />}
+            </motion.button>
+          </motion.div>
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={isMobileMenuVisible ? "open" : "closed"}
+            variants={mobileMenu}
+            className="absolute left-0 right-0 z-50 mt-20 ml-4 mr-4 justify-end rounded-lg bg-slate-100 align-middle font-light shadow-lg"
+          >
+            <div className="flex flex-col p-3">
+              <ul>
+                {MenuItemsOptions.map((option) => (
+                  <MenuItem
+                    label={option.label}
+                    to={option.to}
+                    key={option.id}
+                    onClick={toggleMobileMenu}
+                  />
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </nav>
   );

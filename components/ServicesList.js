@@ -12,7 +12,28 @@ export const ServicesList = [
     • Schimbarea culorii unuia sau mai multor dinti
     • Inflamarea gingivala
     • Dinti cu mobilitate crescuta care provoaca durere
-    • Dificultati in respiratie care au ca si cauza probleme ale cavitatii orale`,
+    • Dificultati in respiratie care au ca si cauza probleme ale cavitatii orale `,
+    textHTML: (
+      <p>
+        Ai o situatie dentara de urgenta sau o durere de dinti? Atunci cand
+        apare durerea inseamna ca exista o leziune care poate evolua cauzand
+        probleme severe ce pot afecta atat zonele invecinate cavitatii bucale
+        cat si starea generala a organismului. Situatiile in care este urgent sa
+        te prezinti la medicul stomatolog: <br />
+        &bull; Durerea acuta a dintilor sau maxilarelor <br />
+        &bull; Durere acuta la masticatie sau la cald/rece <br />
+        &bull; Umflarea fetei, gingiei sau a diverselor zone din cavitatea
+        bucala
+        <br />
+        &bull; Spargerea peretelui unui dinte <br />
+        &bull; Sangerari abundente la nivelul cavitatii orale <br />
+        &bull; Schimbarea culorii unuia sau mai multor dinti <br />
+        &bull; Inflamarea gingivala <br />
+        &bull; Dinti cu mobilitate crescuta care provoaca durere <br />
+        &bull; Dificultati in respiratie care au ca si cauza probleme ale
+        cavitatii orale
+      </p>
+    ),
     link: "services/urgente-stomatologice",
     id: 1,
   },

@@ -61,32 +61,34 @@ function Hero() {
 
   return (
     <div className="flex justify-center">
-      <div className="relative m-4 flex h-[30vh] w-full flex-row justify-center md:h-[50vh] md:w-[80vw]">
-        <motion.img
-          className="w-full rounded-xl object-cover shadow-sm"
-          key={page}
-          src={slider[imageIndex]}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{
-            x: { type: "spring", stiffness: 300, damping: 30, bounce: 0 },
-            opacity: 0.2,
-          }}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x);
-            if (swipe < -swipeConfidenceThreshold) {
-              paginate(1);
-            } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1);
-            }
-          }}
-        />
+      <div className="relative m-4 flex h-[30vh] w-full touch-none flex-row justify-center md:h-[50vh]">
+        <AnimatePresence>
+          <motion.img
+            className="w-full rounded-xl object-cover shadow-sm"
+            key={page}
+            src={slider[imageIndex]}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30, bounce: 0 },
+              opacity: 0.2,
+            }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipe = swipePower(offset.x, velocity.x);
+              if (swipe < -swipeConfidenceThreshold) {
+                paginate(1);
+              } else if (swipe > swipeConfidenceThreshold) {
+                paginate(-1);
+              }
+            }}
+          />
+        </AnimatePresence>
         <Dots count={slider.length} active={imageIndex} />
 
         <motion.button

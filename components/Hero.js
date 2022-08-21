@@ -6,6 +6,9 @@ import { wrap } from "popmotion";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import range from "lodash/range";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper";
+import "swiper/css/bundle";
 
 const Dots = ({ count, active }) => (
   <div className="absolute top-full z-50 -mt-6 flex flex-row justify-center">
@@ -60,9 +63,32 @@ function Hero() {
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="relative m-4 flex h-[30vh] w-full touch-none flex-row justify-center md:h-[50vh]">
-        <AnimatePresence>
+    <div className="">
+      <div className="m-4 h-[30vh] rounded-xl">
+        <Swiper
+          pagination={{
+            dynamicBullets: true,
+          }}
+          loop={true}
+          modules={[Pagination, Navigation]}
+          className="h-full w-full rounded-xl text-center align-middle shadow-xl"
+          spaceBetween={0}
+          navigation={true}
+        >
+          {slider.map((option) => (
+            <SwiperSlide key={option} className="p-1">
+              <Image
+                alt={"Hero Slider"}
+                layout={"fill"}
+                objectFit={"cover"}
+                src={option}
+                className=""
+              ></Image>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      {/* <AnimatePresence>
           <motion.img
             className="w-full rounded-xl object-cover shadow-sm"
             key={page}
@@ -106,8 +132,7 @@ function Hero() {
           whileTap={{ scale: 0.95 }}
         >
           <ArrowForwardIosIcon />
-        </motion.button>
-      </div>
+        </motion.button> */}
     </div>
   );
 }

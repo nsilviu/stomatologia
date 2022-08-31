@@ -2,42 +2,45 @@ import { ServiceCard } from "./ServiceCard";
 import { ServicesList } from "./ServicesList";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCards, Pagination } from "swiper";
+import "swiper/css/effect-cards";
 
 const ServiceHero = () => {
   const [width, setWidth] = useState(0);
   const carousel = useRef();
 
-  useEffect(() => {
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
-  }, []);
+  // useEffect(() => {
+  //   setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+  // }, []);
   return (
-    <div className="flex flex-col px-4">
+    <div className="m-4">
       <div className="flex justify-center">
         <h1 className="mb-4 inline-block text-center text-3xl font-bold text-slate-600">
           Servicii
         </h1>
       </div>
-      <motion.div
-        ref={carousel}
-        className="carousel overflow-hidden rounded-lg"
+      <Swiper
+        className="h-[30vh] w-[93vw] overflow-hidden shadow-none"
+        effect={"cards"}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[EffectCards]}
       >
-        <motion.div
-          className="flex"
-          drag="x"
-          dragConstraints={{ right: 0, left: -width }}
-        >
-          {ServicesList.map((option) => (
+        {ServicesList.map((option, index) => (
+          <SwiperSlide key={index} className="h-[100%] shadow-none">
             <ServiceCard
-              style={"mr-4 min-w-[48%]"}
+              style={"h-full text-center shadow-none"}
               title={option.title}
               key={option.id}
               description={option.text}
               to={option.link}
-              descriptionLength={150}
+              descriptionLength={300}
             />
-          ))}
-        </motion.div>
-      </motion.div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };

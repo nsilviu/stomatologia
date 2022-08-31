@@ -12,6 +12,10 @@
   align-items: center;
 }
 
+.swiper-button-next {
+  color: red;
+}
+
 .footer {
   display: flex;
   flex: 1;

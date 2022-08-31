@@ -48,7 +48,7 @@ const Gallery = () => {
       </h1>
       <div className="mx-4 flex flex-row">
         <AnimateSharedLayout type="crossfade">
-          <div className="relative h-80 min-w-[80vw] ">
+          <div className="relative h-80 min-w-[70vw] ">
             <AnimatePresence>
               <motion.img
                 key={primaryGalleryId}
@@ -59,7 +59,7 @@ const Gallery = () => {
               />
             </AnimatePresence>
           </div>
-          <div className="z-1 ml-2">
+          <div className="z-1 ml-1">
             <AnimatePresence>
               {galleryIds.map((id) => (
                 <SideImages id={id} key={id} onExpand={setAsPrimary} />

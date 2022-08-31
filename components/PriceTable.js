@@ -5,7 +5,7 @@ import React from "react";
 function PriceTable(props) {
   const { title, serviceName, servicePrice } = props;
   return (
-    <div className="mx-4 my-10 flex flex-col rounded-md bg-white text-center  text-slate-900 shadow-md">
+    <div className="mx-4 my-10 flex flex-col rounded-md bg-slate-100 text-center  text-slate-900 shadow-md">
       <span className="mt-2 text-2xl font-bold">
         <FontAwesomeIcon className="fa-xs mr-2" icon={faTooth} />
         {title}

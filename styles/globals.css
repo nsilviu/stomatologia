@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-.swiper-slide-shadow {
-  opacity: 0;
+.swiper-scrollbar-horizontal {
+  color: white;
+}
+
+.swiper-scrollbar-drag {
+  background: rgb(6, 182, 212) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 182, 212, 1) 0%,
+    rgba(59, 130, 246, 1) 100%
+  ) !important;
+}
+
+.swiper {
+  margin: 16px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-scrollbar {
+  width: 60% !important;
+  left: auto !important;
+  right: auto !important;
+}
+
+.swiper-pagination-bullet {
+  background: rgb(6, 182, 212) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 182, 212, 1) 0%,
+    rgba(59, 130, 246, 1) 100%
+  ) !important;
+  box-shadow: 5px !important;
 }

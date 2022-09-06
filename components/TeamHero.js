@@ -3,29 +3,22 @@ import { TeamList } from "./TeamList";
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/scrollbar";
+import { Scrollbar } from "swiper";
+
 const TeamHero = (option) => {
-  const [width, setWidth] = useState(0);
-  const carousel = useRef();
-
-  useEffect(() => {
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
-  }, []);
-
   return (
-    <div className="flex flex-col">
-      <h1 className="my-4 inline-block text-center text-3xl font-bold text-slate-600">
+    <div>
+      <h1 className="my-4 text-center text-3xl font-bold text-slate-600">
         Echipa noastra
       </h1>
-      <motion.div
-        ref={carousel}
-        className="align-st relative flex flex-row flex-nowrap overflow-hidden"
-      >
-        <motion.div
-          className="flex flex-row"
-          drag="x"
-          dragConstraints={{ right: 0, left: -width }}
-        >
-          {TeamList.map((option) => (
+      <Swiper spaceBetween={5} scrollbar modules={[Scrollbar]}>
+        {TeamList.map((option, index) => (
+          <SwiperSlide key={index}>
             <TeamMember
               title={option.title}
               key={option.id}
@@ -33,9 +26,9 @@ const TeamHero = (option) => {
               photo={option.photo}
               subtitle={option.subtitle}
             />
-          ))}
-        </motion.div>
-      </motion.div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };

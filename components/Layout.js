@@ -10,10 +10,10 @@ const Layout = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <Navbar className="relative" />
+        <Navbar className="fixed" />
       </div>
       <>
-        <div className="relative z-0">{children}</div>
+        <div className="mt-32">{children}</div>
       </>
       <div>
         <Footer />

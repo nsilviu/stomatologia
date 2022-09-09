@@ -29,7 +29,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
+    <nav className="fixed top-0 z-50 h-24 w-full bg-white md:h-36">
       <div className="mt-4 flex justify-between align-middle">
         <div className="ml-5 flex flex-row align-middle">
           <div className="flex flex-row align-middle">

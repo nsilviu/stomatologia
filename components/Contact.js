@@ -18,7 +18,7 @@ export default function Contact() {
             allowFullScreen="false"
             frameBorder="0"
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
             className=" rounded-xl"
           />
         </div>

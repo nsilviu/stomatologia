@@ -5,7 +5,10 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 export default function Contact() {
   return (
-    <div className="mx-4 mt-8 overflow-hidden rounded-xl ">
+    <div
+      id="contact"
+      className="mx-4 mt-8 scroll-mt-24 overflow-hidden rounded-xl"
+    >
       <div className="mx-4 mt-4 text-center text-3xl font-bold text-slate-800">
         Contact
       </div>
@@ -15,7 +18,7 @@ export default function Contact() {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1729.9790571210942!2d26.141625515258408!3d44.41234180012498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1feecd16a038d%3A0x33192f3ce75d54!2sStomatologia%20Orto%20Implant!5e0!3m2!1sen!2sro!4v1662643742201!5m2!1sen!2sro"
             width={"100%"}
             height={"100%"}
-            allowFullScreen="false"
+            allowFullScreen={false}
             frameBorder="0"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 import MenuItem from "./MenuItem";
 import { MenuItemsOptions } from "./MenuItemsOptions";
 import { Button } from "./Button";
-import { CallIcon } from "./svgs";
-import { faPhone, faTooth } from "@fortawesome/free-solid-svg-icons";
+import { Tooth } from "./svgs";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Navbar = () => {
@@ -32,12 +32,9 @@ const Navbar = () => {
     <nav className="fixed top-0 z-50 h-24 w-full bg-white md:h-36">
       <div className="mt-4 flex justify-between align-middle">
         <div className="ml-5 flex flex-row align-middle">
-          <div className="flex flex-row align-middle">
+          <div className="flex flex-row space-x-1  align-middle">
             <Link href="/">
-              <FontAwesomeIcon
-                className="fa-2xl m-2 self-center md:text-7xl"
-                icon={faTooth}
-              />
+              <Tooth className="w-10" />
             </Link>
             <div className="flex cursor-pointer flex-col">
               <Link href="/">
@@ -60,6 +57,7 @@ const Navbar = () => {
               text={"Contact"}
               icon={faPhone}
               buttonStyle={"p-2"}
+              key={"Contact"}
             />
           </div>
           <motion.div

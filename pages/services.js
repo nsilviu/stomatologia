@@ -10,7 +10,7 @@ export default function Services() {
       </section>
       <div className="grid grid-flow-dense grid-cols-1 justify-center p-4">
         {ServicesList.map((option) => (
-          <div key={option.id} className="mb-2">
+          <div key={option.id} className="mb-4">
             <ServiceCard
               title={option.title}
               key={option.id}

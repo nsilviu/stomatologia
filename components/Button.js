@@ -7,7 +7,7 @@ export const Button = (props) => {
   return (
     <div className="flex align-middle">
       <motion.a
-        key={text}
+        key={key}
         className={`${buttonStyle}
         inline-flex 
         items-center 

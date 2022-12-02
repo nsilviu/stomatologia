@@ -15,7 +15,7 @@ const ServiceHero = () => {
   return (
     <div className="z-1 m-4">
       <div className="text-center">
-        <h1 className="mx-4 mt-4 inline-block text-3xl font-bold text-slate-800">
+        <h1 className="font-poppins mx-4 mt-4 inline-block text-3xl font-bold text-slate-800">
           Servicii
         </h1>
       </div>

@@ -18,6 +18,10 @@ const gallery = [
   "/gallery2.jpg",
   "/gallery3.jpg",
   "/gallery4.jpg",
+  "/gallery5.jpg",
+  "/gallery6.jpg",
+  "/gallery7.jpg",
+  "/gallery8.jpg",
 ];
 
 var galleryIndex = [];
@@ -28,7 +32,7 @@ for (var i = 1; i < gallery.length; i++) {
 }
 
 const Gallery = () => {
-  const [galleryIds, setGalleryIds] = useState([2, 3, 4]);
+  const [galleryIds, setGalleryIds] = useState([2, 3, 4, 5, 6, 7]);
   const [primaryGalleryId, setPrimaryGalleryId] = useState(1);
 
   function setAsPrimary(id) {
@@ -42,13 +46,16 @@ const Gallery = () => {
   }
 
   return (
-    <div className="flex flex-col">
+    <div
+      id="gallery"
+      className="flex h-[460px] scroll-mt-24 flex-col overflow-hidden"
+    >
       <h1 className="my-4 inline-block text-center text-3xl font-bold text-slate-600">
         Galerie
       </h1>
       <div className="mx-4 flex flex-row">
         <AnimateSharedLayout type="crossfade">
-          <div className="relative h-80 min-w-[70vw] ">
+          <div className="relative h-96 min-w-[70vw]">
             <AnimatePresence>
               <motion.img
                 key={primaryGalleryId}

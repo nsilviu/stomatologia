@@ -6,7 +6,7 @@ export const ActionButton = (props) => {
 
   return (
     <div className="flex align-middle">
-      <motion.button
+      <motion.a
         key={text}
         className={`${buttonStyle}
         inline-flex 
@@ -23,7 +23,7 @@ export const ActionButton = (props) => {
           <FontAwesomeIcon icon={icon} />
         </span>
         <span className={`${textStyle} m-1 inline-block`}>{text}</span>
-      </motion.button>
+      </motion.a>
     </div>
   );
 };
